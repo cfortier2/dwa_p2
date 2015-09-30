@@ -62,7 +62,7 @@
               <label for="splitter">Splitter (default: "-")</label>
               <select class="form-control" id="splitter" name="splitter">
                 <?php
-                  $special_chars = '-!"#$%&()*+,./:;<=>?@[\]^_`{|}~';
+                  $special_chars = '-!"#$%&()*+,./:;=?@[\]^_`{|}~';
                   $splitter = ($_POST['splitter'] ?: "-");
                   for($i = 0; $i < strlen($special_chars); $i++) {
                     if ($special_chars[$i] != $splitter) {
