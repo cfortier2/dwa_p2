@@ -34,7 +34,39 @@
   </head>
   <body>
     <div class="container-fluid">
-      <h1>xkcd Password Generator</h1>
+        <div class="center">
+          <!-- header -->
+          <h1>xkcd Password Generator</h1>
+
+          <!-- entry form -->
+        <div class="main">
+          <form>
+            <div class="form-group">
+              <label for="numberOfWords">Number of words (max: 9)</label>
+              <input type="text" class="form-control" id="numberOfWords" placeholder="#">
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Include a number?
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Include special symbols?
+              </label>
+            </div>
+            <div class="form-control">
+              <label>Generated Password:</label>
+              <input type="text" placeholder="Readonly input here…" readonly>
+            </div>
+          </form>
+        </div>
+
+          <!-- image -->
+          <hr>
+          <h1>xkcd Password Generator Explanation:</h1>
+          <img class='comic' src='http://imgs.xkcd.com/comics/password_strength.png'>
+        </div>
     </div>
 
 
