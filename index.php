@@ -35,9 +35,6 @@
   <?php require 'logic.php'; ?>
   </head>
   <body>
-<pre>
-    <?php print_r($_POST); ?>
-</pre>
     <div class="container-fluid">
         <div class="center">
           <!-- header -->
