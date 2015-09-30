@@ -104,7 +104,7 @@
           <table class="table">
             <thead>
               <tr class="bg">
-                <h1><th class="center">Generated Password:</th></h1>
+                <th class="center">Generated Password:</th>
               </tr>
             </thead>
             <tbody>
