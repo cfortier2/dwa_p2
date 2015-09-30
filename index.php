@@ -120,7 +120,7 @@
           <!-- image -->
           <hr>
           <h1>xkcd Password Generator Explanation:</h1>
-          <img class='comic' src='http://imgs.xkcd.com/comics/password_strength.png'>
+          <img class='comic' src='http://imgs.xkcd.com/comics/password_strength.png' alt='Image of xkcd password comic'>
         </div>
     </div>
 
