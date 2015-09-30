@@ -97,7 +97,7 @@
             </thead>
             <tbody>
               <tr class="success">
-                <td><?php echo generate_password($numberOfWords, "-", $includeNumber, $includeSymbol) ?></td>
+                <td><?php echo generate_password($numberOfWords, "-", $includeSymbol, $includeNumber) ?></td>
               </tr>
             </tbody>
           </table>

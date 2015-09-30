@@ -24,6 +24,14 @@ function generate_password($number_of_words, $splitter, $includeSymbol, $include
     }
   }
 
+  // include number
+  if ($includeNumber) {
+    $max = 10000;
+    for ($i = 0; $i < count($password); $i++) {
+      $password[$i] = $password[$i] . rand(0, $max);
+    }
+  }
+
   return password_to_string($password, $splitter);
 
 }
