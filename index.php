@@ -61,6 +61,21 @@
                 };?>
               </select>
             </div>
+            <div class="form-group">
+              <label for="splitter">Splitter (default: "-")</label>
+              <select class="form-control" id="splitter" name="splitter">
+                <?php
+                  $special_chars = '-!"#$%&()*+,./:;<=>?@[\]^_`{|}~';
+                  $splitter = ($_POST['splitter'] ?: "-");
+                  for($i = 0; $i < strlen($special_chars); $i++) {
+                    if ($special_chars[$i] != $splitter) {
+                      echo '<option>' . $special_chars[$i] . '</option>';
+                    } else {
+                      echo '<option selected="selected">' . $special_chars[$i] . '</option>';
+                    }
+                };?>
+              </select>
+            </div>
             <div class="checkbox">
               <label>
                 <?php
@@ -97,7 +112,7 @@
             </thead>
             <tbody>
               <tr class="success">
-                <td><?php echo generate_password($numberOfWords, "-", $includeSymbol, $includeNumber) ?></td>
+                <td><?php echo generate_password($numberOfWords, $splitter, $includeSymbol, $includeNumber) ?></td>
               </tr>
             </tbody>
           </table>
