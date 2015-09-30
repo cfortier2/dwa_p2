@@ -51,8 +51,9 @@
               <select class="form-control" id="numberOfWords" name="numberOfWords">
                 <?php
                 $max = 9;
+                $numberOfWords = ($_POST['numberOfWords'] ?: 4);
                 for($i =1; $i <= $max; $i++) {
-                  if ($i != $_POST['numberOfWords']) {
+                  if ($i != $numberOfWords) {
                     echo '<option>' . $i . '</option>';
                   } else {
                     echo '<option selected="selected">' . $i . '</option>';
@@ -62,12 +63,26 @@
             </div>
             <div class="checkbox">
               <label>
-                <input type="checkbox" name="includeNumber"> Include a number?
+                <?php
+                  $includeNumber = ($_POST['includeNumber'] ? true : false);
+                  if ($includeNumber) {
+                    echo '<input type="checkbox" name="includeNumber" checked> Include a number?';
+                  } else {
+                    echo '<input type="checkbox" name="includeNumber"> Include a number?';
+                  }
+                ?>
               </label>
             </div>
             <div class="checkbox">
               <label>
-                <input type="checkbox" name="includeSymbols"> Include special symbols?
+                <?php
+                  $includeSymbol = ($_POST['includeSymbol'] ? true : false);
+                  if ($includeSymbol) {
+                    echo '<input type="checkbox" name="includeSymbol" checked> Include special symbols?';
+                  } else {
+                    echo '<input type="checkbox" name="includeSymbol"> Include special symbols?';
+                  }
+                ?>
               </label>
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
@@ -82,7 +97,7 @@
             </thead>
             <tbody>
               <tr class="success">
-                <td><?php echo generate_password($_POST['numberOfWords'], "-") ?></td>
+                <td><?php echo generate_password($numberOfWords, "-", $includeNumber, $includeSymbol) ?></td>
               </tr>
             </tbody>
           </table>
