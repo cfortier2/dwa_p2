@@ -103,9 +103,11 @@
           <hr>
           <table class="table">
             <thead>
+              <h1>
               <tr class="bg">
-                <th class="center"><h1>Generated Password:</h1></th>
+                <th class="center">Generated Password:</th>
               </tr>
+              </h1>
             </thead>
             <tbody>
               <tr class="success">
