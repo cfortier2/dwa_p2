@@ -35,6 +35,9 @@
   <?php require 'logic.php'; ?>
   </head>
   <body>
+<pre>
+    <?php print_r($_POST); ?>
+</pre>
     <div class="container-fluid">
         <div class="center">
           <!-- header -->
@@ -42,10 +45,20 @@
 
           <!-- entry form -->
         <div class="main">
-          <form>
+          <form method='POST' action=index.php>
             <div class="form-group">
               <label for="numberOfWords">Number of words (max: 9)</label>
-              <input type="text" class="form-control" id="numberOfWords" placeholder="#">
+              <select class="form-control" id="numberOfWords">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option selected="selected">4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+              </select>
             </div>
             <div class="checkbox">
               <label>
@@ -57,6 +70,7 @@
                 <input type="checkbox"> Include special symbols?
               </label>
             </div>
+            <button type="submit" class="btn btn-default">Submit</button>
           </form>
 
           <hr>
@@ -68,7 +82,7 @@
             </thead>
             <tbody>
               <tr class="success">
-                <td><?php echo generate_password(4) ?></td>
+                <td><?php echo generate_password(4, "-") ?></td>
               </tr>
             </tbody>
           </table>

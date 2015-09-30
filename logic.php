@@ -1,6 +1,7 @@
 <?php
 
-function generate_password($number_of_words) {
+// Takes an int denoting the number of words in the desired password and a character for the splitter
+function generate_password($number_of_words, $splitter) {
 
   // filename to open
   $filename = 'wordsEn.txt';
@@ -8,6 +9,7 @@ function generate_password($number_of_words) {
   // array of dictionary words
   $words = file($filename, FILE_IGNORE_NEW_LINES);
 
+  // instantiate an array for the password
   $password = array($number_of_words);
 
   // generate password
@@ -15,11 +17,10 @@ function generate_password($number_of_words) {
     $password[$i] = $words[rand(0, count($words))];
   }
 
-  return password_to_string($password, "-");
+  return password_to_string($password, $splitter);
 
 }
 
-//
 // Takes an array of strings and a splitter and returns a string for the password
 function password_to_string($password_array, $splitter) {
 
